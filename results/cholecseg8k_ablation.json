@@ -1,0 +1,636 @@
+{
+  "evidence_type": "real_cholecseg8k_subset",
+  "license": "CC BY-NC-SA 4.0",
+  "device": "cuda",
+  "split_manifest": {
+    "train": {
+      "videos": [
+        "video01",
+        "video09",
+        "video18",
+        "video20",
+        "video24",
+        "video25",
+        "video26",
+        "video28",
+        "video35",
+        "video37",
+        "video43",
+        "video48",
+        "video55"
+      ],
+      "sequences": 1480
+    },
+    "validation": {
+      "videos": [
+        "video17",
+        "video52"
+      ],
+      "sequences": 280
+    },
+    "test": {
+      "videos": [
+        "video12",
+        "video27"
+      ],
+      "sequences": 260
+    }
+  },
+  "sample_limits": {
+    "train": 480,
+    "validation": 120,
+    "test": 120
+  },
+  "experiments": [
+    {
+      "experiment": "frame_only",
+      "temporal": false,
+      "parameter_count": 66385,
+      "training_seconds": 88.48822300008032,
+      "best_validation_mean_foreground_iou": 0.28162698709160017,
+      "test": {
+        "mean_foreground_iou": 0.22350116996164202,
+        "per_class_iou": {
+          "background": 0.9380741870374021,
+          "abdominal_wall": 0.6363890689074472,
+          "liver": 0.42435235957339396,
+          "gastrointestinal_tract": 0.0,
+          "fat": 0.6059332995679634,
+          "grasper": 0.1680544730304769,
+          "connective_tissue": 0.0,
+          "blood": null,
+          "cystic_duct": null,
+          "l_hook_electrocautery": 0.0,
+          "gallbladder": 0.17678132857549697,
+          "hepatic_vein": 0.0,
+          "liver_ligament": null
+        },
+        "raw_prediction_change": 0.030592146508487655,
+        "static_region_flicker": 0.027595357104114687,
+        "lowest_foreground_iou_sequences": [
+          {
+            "key": "video12/video12_19660/frame_19700_endo.png",
+            "foreground_iou": 0.7567624449729919
+          },
+          {
+            "key": "video12/video12_15830/frame_15838_endo.png",
+            "foreground_iou": 0.8293331861495972
+          },
+          {
+            "key": "video12/video12_19660/frame_19696_endo.png",
+            "foreground_iou": 0.8518790006637573
+          },
+          {
+            "key": "video12/video12_19660/frame_19712_endo.png",
+            "foreground_iou": 0.8562265634536743
+          },
+          {
+            "key": "video12/video12_19660/frame_19680_endo.png",
+            "foreground_iou": 0.8568780422210693
+          },
+          {
+            "key": "video12/video12_19660/frame_19672_endo.png",
+            "foreground_iou": 0.8585751056671143
+          },
+          {
+            "key": "video12/video12_15830/frame_15874_endo.png",
+            "foreground_iou": 0.8838538527488708
+          },
+          {
+            "key": "video12/video12_19980/frame_20056_endo.png",
+            "foreground_iou": 0.9171367287635803
+          },
+          {
+            "key": "video12/video12_19980/frame_20044_endo.png",
+            "foreground_iou": 0.9310676455497742
+          },
+          {
+            "key": "video12/video12_19980/frame_20040_endo.png",
+            "foreground_iou": 0.9321551322937012
+          },
+          {
+            "key": "video12/video12_19980/frame_20008_endo.png",
+            "foreground_iou": 0.9391193389892578
+          },
+          {
+            "key": "video12/video12_19980/frame_20032_endo.png",
+            "foreground_iou": 0.9396155476570129
+          }
+        ]
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.1825226947665213,
+          "mean_foreground_iou": 0.16224820204015725,
+          "per_class_iou": {
+            "background": 0.9528776742080455,
+            "abdominal_wall": 0.07489471430426224,
+            "liver": 0.2187300010887374,
+            "gastrointestinal_tract": 0.0,
+            "fat": 0.8267700167866587,
+            "grasper": 4.4102211284873825e-05,
+            "connective_tissue": null,
+            "blood": null,
+            "cystic_duct": 0.0,
+            "l_hook_electrocautery": 0.0,
+            "gallbladder": 0.1775467819303147,
+            "hepatic_vein": null,
+            "liver_ligament": null
+          },
+          "raw_prediction_change": 0.01972945601851852,
+          "static_region_flicker": 0.01703617272413093,
+          "lowest_foreground_iou_sequences": [
+            {
+              "key": "video52/video52_00080/frame_88_endo.png",
+              "foreground_iou": 0.9582465887069702
+            },
+            {
+              "key": "video52/video52_00080/frame_84_endo.png",
+              "foreground_iou": 0.9583857655525208
+            },
+            {
+              "key": "video52/video52_00080/frame_92_endo.png",
+              "foreground_iou": 0.9644184112548828
+            },
+            {
+              "key": "video52/video52_00160/frame_208_endo.png",
+              "foreground_iou": 0.9669692516326904
+            },
+            {
+              "key": "video52/video52_00240/frame_244_endo.png",
+              "foreground_iou": 0.9673595428466797
+            },
+            {
+              "key": "video52/video52_00160/frame_204_endo.png",
+              "foreground_iou": 0.9675235152244568
+            },
+            {
+              "key": "video52/video52_00000/frame_76_endo.png",
+              "foreground_iou": 0.9694613218307495
+            },
+            {
+              "key": "video52/video52_00000/frame_60_endo.png",
+              "foreground_iou": 0.9719985127449036
+            },
+            {
+              "key": "video52/video52_00000/frame_68_endo.png",
+              "foreground_iou": 0.9721128940582275
+            },
+            {
+              "key": "video52/video52_02746/frame_2798_endo.png",
+              "foreground_iou": 0.9729039072990417
+            },
+            {
+              "key": "video52/video52_00160/frame_216_endo.png",
+              "foreground_iou": 0.9730531573295593
+            },
+            {
+              "key": "video52/video52_02746/frame_2786_endo.png",
+              "foreground_iou": 0.9731267690658569
+            }
+          ]
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.5401396736502648,
+          "mean_foreground_iou": 0.28162698709160017,
+          "per_class_iou": {
+            "background": 0.9619212497926115,
+            "abdominal_wall": 0.5976517001951425,
+            "liver": 0.30268305310853083,
+            "gastrointestinal_tract": 0.0,
+            "fat": 0.8057995575384,
+            "grasper": 0.21827838084226162,
+            "connective_tissue": null,
+            "blood": null,
+            "cystic_duct": 0.0,
+            "l_hook_electrocautery": 0.0,
+            "gallbladder": 0.3286032050484663,
+            "hepatic_vein": null,
+            "liver_ligament": null
+          },
+          "raw_prediction_change": 0.030512755594135802,
+          "static_region_flicker": 0.02721188679143252,
+          "lowest_foreground_iou_sequences": [
+            {
+              "key": "video52/video52_00080/frame_84_endo.png",
+              "foreground_iou": 0.9601305723190308
+            },
+            {
+              "key": "video52/video52_00080/frame_88_endo.png",
+              "foreground_iou": 0.9614889025688171
+            },
+            {
+              "key": "video52/video52_00000/frame_76_endo.png",
+              "foreground_iou": 0.9621409773826599
+            },
+            {
+              "key": "video52/video52_00000/frame_60_endo.png",
+              "foreground_iou": 0.9642889499664307
+            },
+            {
+              "key": "video52/video52_00000/frame_68_endo.png",
+              "foreground_iou": 0.9651897549629211
+            },
+            {
+              "key": "video52/video52_00240/frame_244_endo.png",
+              "foreground_iou": 0.9675098061561584
+            },
+            {
+              "key": "video52/video52_00080/frame_92_endo.png",
+              "foreground_iou": 0.969001829624176
+            },
+            {
+              "key": "video52/video52_00000/frame_52_endo.png",
+              "foreground_iou": 0.976387083530426
+            },
+            {
+              "key": "video52/video52_00160/frame_208_endo.png",
+              "foreground_iou": 0.9772455096244812
+            },
+            {
+              "key": "video17/video17_01963/frame_2039_endo.png",
+              "foreground_iou": 0.977388858795166
+            },
+            {
+              "key": "video52/video52_00160/frame_204_endo.png",
+              "foreground_iou": 0.9777473211288452
+            },
+            {
+              "key": "video52/video52_00080/frame_124_endo.png",
+              "foreground_iou": 0.9778922200202942
+            }
+          ]
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.342856668184201,
+          "mean_foreground_iou": 0.2305251786782403,
+          "per_class_iou": {
+            "background": 0.9683246667081096,
+            "abdominal_wall": 0.4539924363882092,
+            "liver": 0.27155393356259805,
+            "gastrointestinal_tract": 0.0,
+            "fat": 0.7830227748547662,
+            "grasper": 0.11745136536426214,
+            "connective_tissue": null,
+            "blood": null,
+            "cystic_duct": 0.0,
+            "l_hook_electrocautery": 0.0,
+            "gallbladder": 0.21818091925608668,
+            "hepatic_vein": null,
+            "liver_ligament": null
+          },
+          "raw_prediction_change": 0.030285976080246912,
+          "static_region_flicker": 0.02711608543490006,
+          "lowest_foreground_iou_sequences": [
+            {
+              "key": "video52/video52_00080/frame_84_endo.png",
+              "foreground_iou": 0.9667161107063293
+            },
+            {
+              "key": "video52/video52_00080/frame_88_endo.png",
+              "foreground_iou": 0.9668385982513428
+            },
+            {
+              "key": "video52/video52_00000/frame_76_endo.png",
+              "foreground_iou": 0.9714769124984741
+            },
+            {
+              "key": "video52/video52_00080/frame_92_endo.png",
+              "foreground_iou": 0.971566379070282
+            },
+            {
+              "key": "video52/video52_00240/frame_244_endo.png",
+              "foreground_iou": 0.9720190167427063
+            },
+            {
+              "key": "video52/video52_00000/frame_60_endo.png",
+              "foreground_iou": 0.9749723076820374
+            },
+            {
+              "key": "video52/video52_00000/frame_68_endo.png",
+              "foreground_iou": 0.9756619334220886
+            },
+            {
+              "key": "video52/video52_00160/frame_208_endo.png",
+              "foreground_iou": 0.9784998297691345
+            },
+            {
+              "key": "video52/video52_00160/frame_204_endo.png",
+              "foreground_iou": 0.978851854801178
+            },
+            {
+              "key": "video52/video52_00160/frame_200_endo.png",
+              "foreground_iou": 0.9807645082473755
+            },
+            {
+              "key": "video52/video52_00160/frame_216_endo.png",
+              "foreground_iou": 0.9808456897735596
+            },
+            {
+              "key": "video52/video52_00000/frame_52_endo.png",
+              "foreground_iou": 0.9814048409461975
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "experiment": "temporal",
+      "temporal": true,
+      "parameter_count": 190945,
+      "training_seconds": 83.8375129000051,
+      "best_validation_mean_foreground_iou": 0.2955941228104101,
+      "test": {
+        "mean_foreground_iou": 0.20864975298849434,
+        "per_class_iou": {
+          "background": 0.9583287303999215,
+          "abdominal_wall": 0.5672804593374737,
+          "liver": 0.5062394376064111,
+          "gastrointestinal_tract": 9.22665839958074e-05,
+          "fat": 0.5608654254106648,
+          "grasper": 0.11968849667907056,
+          "connective_tissue": 0.0,
+          "blood": null,
+          "cystic_duct": null,
+          "l_hook_electrocautery": 0.0,
+          "gallbladder": 0.12368169127883304,
+          "hepatic_vein": 0.0,
+          "liver_ligament": null
+        },
+        "raw_prediction_change": 0.04866892119984568,
+        "static_region_flicker": 0.046295010482347396,
+        "lowest_foreground_iou_sequences": [
+          {
+            "key": "video12/video12_19660/frame_19700_endo.png",
+            "foreground_iou": 0.7720210552215576
+          },
+          {
+            "key": "video12/video12_15830/frame_15838_endo.png",
+            "foreground_iou": 0.8604673743247986
+          },
+          {
+            "key": "video12/video12_19660/frame_19696_endo.png",
+            "foreground_iou": 0.8670924305915833
+          },
+          {
+            "key": "video12/video12_19660/frame_19712_endo.png",
+            "foreground_iou": 0.8674043416976929
+          },
+          {
+            "key": "video12/video12_19660/frame_19680_endo.png",
+            "foreground_iou": 0.8689548969268799
+          },
+          {
+            "key": "video12/video12_19660/frame_19672_endo.png",
+            "foreground_iou": 0.8698263764381409
+          },
+          {
+            "key": "video12/video12_15830/frame_15874_endo.png",
+            "foreground_iou": 0.9081369638442993
+          },
+          {
+            "key": "video12/video12_19980/frame_20056_endo.png",
+            "foreground_iou": 0.9417626261711121
+          },
+          {
+            "key": "video12/video12_19980/frame_20044_endo.png",
+            "foreground_iou": 0.9517951607704163
+          },
+          {
+            "key": "video12/video12_19980/frame_20040_endo.png",
+            "foreground_iou": 0.9537208080291748
+          },
+          {
+            "key": "video12/video12_19980/frame_20032_endo.png",
+            "foreground_iou": 0.9616527557373047
+          },
+          {
+            "key": "video12/video12_19980/frame_20028_endo.png",
+            "foreground_iou": 0.9625440239906311
+          }
+        ]
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 2.2371050640940666,
+          "mean_foreground_iou": 0.23762336699489625,
+          "per_class_iou": {
+            "background": 0.9570841766867192,
+            "abdominal_wall": 0.3901910691813553,
+            "liver": 0.2715401620085422,
+            "gastrointestinal_tract": 0.0,
+            "fat": 0.838880062334996,
+            "grasper": 0.001954867796928568,
+            "connective_tissue": null,
+            "blood": null,
+            "cystic_duct": 0.0,
+            "l_hook_electrocautery": 0.0,
+            "gallbladder": 0.3984207746373478,
+            "hepatic_vein": null,
+            "liver_ligament": null
+          },
+          "raw_prediction_change": 0.027604648919753085,
+          "static_region_flicker": 0.024366604937573647,
+          "lowest_foreground_iou_sequences": [
+            {
+              "key": "video52/video52_00080/frame_88_endo.png",
+              "foreground_iou": 0.9543296694755554
+            },
+            {
+              "key": "video52/video52_00240/frame_244_endo.png",
+              "foreground_iou": 0.9548656940460205
+            },
+            {
+              "key": "video52/video52_00080/frame_84_endo.png",
+              "foreground_iou": 0.9564003348350525
+            },
+            {
+              "key": "video52/video52_00080/frame_92_endo.png",
+              "foreground_iou": 0.9588615298271179
+            },
+            {
+              "key": "video52/video52_00160/frame_204_endo.png",
+              "foreground_iou": 0.961110532283783
+            },
+            {
+              "key": "video52/video52_00160/frame_208_endo.png",
+              "foreground_iou": 0.9612905383110046
+            },
+            {
+              "key": "video52/video52_00000/frame_76_endo.png",
+              "foreground_iou": 0.9662473201751709
+            },
+            {
+              "key": "video52/video52_00160/frame_216_endo.png",
+              "foreground_iou": 0.9671614766120911
+            },
+            {
+              "key": "video52/video52_00000/frame_60_endo.png",
+              "foreground_iou": 0.9687018394470215
+            },
+            {
+              "key": "video52/video52_00000/frame_68_endo.png",
+              "foreground_iou": 0.9689286947250366
+            },
+            {
+              "key": "video52/video52_00160/frame_200_endo.png",
+              "foreground_iou": 0.9711032509803772
+            },
+            {
+              "key": "video52/video52_00000/frame_12_endo.png",
+              "foreground_iou": 0.9711490273475647
+            }
+          ]
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.5830981597304343,
+          "mean_foreground_iou": 0.2955941228104101,
+          "per_class_iou": {
+            "background": 0.9755097044649803,
+            "abdominal_wall": 0.6249807756433228,
+            "liver": 0.293461720773426,
+            "gastrointestinal_tract": 0.0,
+            "fat": 0.7967681094516991,
+            "grasper": 0.20304384194260927,
+            "connective_tissue": null,
+            "blood": null,
+            "cystic_duct": 0.0,
+            "l_hook_electrocautery": 0.0,
+            "gallbladder": 0.4464985346722234,
+            "hepatic_vein": null,
+            "liver_ligament": null
+          },
+          "raw_prediction_change": 0.04666654610339506,
+          "static_region_flicker": 0.043371283534161816,
+          "lowest_foreground_iou_sequences": [
+            {
+              "key": "video17/video17_01963/frame_2039_endo.png",
+              "foreground_iou": 0.9809155464172363
+            },
+            {
+              "key": "video17/video17_01963/frame_2031_endo.png",
+              "foreground_iou": 0.982428252696991
+            },
+            {
+              "key": "video52/video52_02746/frame_2798_endo.png",
+              "foreground_iou": 0.9830629825592041
+            },
+            {
+              "key": "video17/video17_01963/frame_2019_endo.png",
+              "foreground_iou": 0.9830887913703918
+            },
+            {
+              "key": "video52/video52_02746/frame_2786_endo.png",
+              "foreground_iou": 0.9831321239471436
+            },
+            {
+              "key": "video52/video52_02826/frame_2838_endo.png",
+              "foreground_iou": 0.983411967754364
+            },
+            {
+              "key": "video52/video52_02746/frame_2790_endo.png",
+              "foreground_iou": 0.9835074543952942
+            },
+            {
+              "key": "video52/video52_02826/frame_2834_endo.png",
+              "foreground_iou": 0.983725905418396
+            },
+            {
+              "key": "video52/video52_02906/frame_2934_endo.png",
+              "foreground_iou": 0.9838579297065735
+            },
+            {
+              "key": "video52/video52_02746/frame_2818_endo.png",
+              "foreground_iou": 0.9839615225791931
+            },
+            {
+              "key": "video52/video52_02826/frame_2842_endo.png",
+              "foreground_iou": 0.9840011596679688
+            },
+            {
+              "key": "video52/video52_02746/frame_2814_endo.png",
+              "foreground_iou": 0.9840262532234192
+            }
+          ]
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.3336274296045303,
+          "mean_foreground_iou": 0.21370464576501252,
+          "per_class_iou": {
+            "background": 0.9492764749909912,
+            "abdominal_wall": 0.35107326291717605,
+            "liver": 0.3618068331374351,
+            "gastrointestinal_tract": 0.03192900599240657,
+            "fat": 0.8129652174560593,
+            "grasper": 0.13151759710937722,
+            "connective_tissue": 0.0,
+            "blood": null,
+            "cystic_duct": 0.0,
+            "l_hook_electrocautery": 0.0,
+            "gallbladder": 0.2340498952726584,
+            "hepatic_vein": null,
+            "liver_ligament": null
+          },
+          "raw_prediction_change": 0.04554916570216049,
+          "static_region_flicker": 0.04253807596955397,
+          "lowest_foreground_iou_sequences": [
+            {
+              "key": "video52/video52_00080/frame_84_endo.png",
+              "foreground_iou": 0.9406206011772156
+            },
+            {
+              "key": "video52/video52_00000/frame_76_endo.png",
+              "foreground_iou": 0.940686047077179
+            },
+            {
+              "key": "video52/video52_00080/frame_88_endo.png",
+              "foreground_iou": 0.9430588483810425
+            },
+            {
+              "key": "video52/video52_00000/frame_60_endo.png",
+              "foreground_iou": 0.9435408711433411
+            },
+            {
+              "key": "video52/video52_00000/frame_68_endo.png",
+              "foreground_iou": 0.9445329904556274
+            },
+            {
+              "key": "video52/video52_00080/frame_92_endo.png",
+              "foreground_iou": 0.9471985697746277
+            },
+            {
+              "key": "video52/video52_00240/frame_244_endo.png",
+              "foreground_iou": 0.9500936269760132
+            },
+            {
+              "key": "video52/video52_00000/frame_52_endo.png",
+              "foreground_iou": 0.9559606313705444
+            },
+            {
+              "key": "video52/video52_00000/frame_44_endo.png",
+              "foreground_iou": 0.9594805240631104
+            },
+            {
+              "key": "video52/video52_00000/frame_40_endo.png",
+              "foreground_iou": 0.9599350094795227
+            },
+            {
+              "key": "video52/video52_00080/frame_124_endo.png",
+              "foreground_iou": 0.96016526222229
+            },
+            {
+              "key": "video52/video52_00000/frame_4_endo.png",
+              "foreground_iou": 0.9602066278457642
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

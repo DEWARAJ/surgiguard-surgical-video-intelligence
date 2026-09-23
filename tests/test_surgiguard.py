@@ -3,14 +3,17 @@ import unittest
 from pathlib import Path
 
 import torch
+import numpy as np
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from surgiguard.data import SyntheticSurgicalVideo  # noqa: E402
+from surgiguard.cholecseg8k import WATERSHED_TO_CLASS, decode_watershed_mask  # noqa: E402
 from surgiguard.losses import combined_loss  # noqa: E402
 from surgiguard.metrics import class_metrics, risk_events, tip_coordinates  # noqa: E402
-from surgiguard.model import TemporalSurgiNet  # noqa: E402
+from surgiguard.model import SurgicalSegNet, TemporalSurgiNet  # noqa: E402
 
 
 class SurgiGuardTests(unittest.TestCase):
@@ -26,6 +29,18 @@ class SurgiGuardTests(unittest.TestCase):
         segmentation, tips = model(video)
         self.assertEqual(tuple(segmentation.shape), (2, 3, 3, 64, 64))
         self.assertEqual(tuple(tips.shape), (2, 3, 1, 64, 64))
+
+    def test_real_data_models_have_expected_shape(self):
+        video = torch.rand(2, 4, 3, 64, 96)
+        for temporal in (False, True):
+            logits = SurgicalSegNet(base_channels=4, classes=13, temporal=temporal)(video)
+            self.assertEqual(tuple(logits.shape), (2, 4, 13, 64, 96))
+
+    def test_cholecseg8k_palette_decoding(self):
+        values = list(WATERSHED_TO_CLASS)
+        pixels = np.asarray(values, dtype=np.uint8).reshape(1, -1, 1).repeat(3, axis=2)
+        decoded = decode_watershed_mask(Image.fromarray(pixels, mode="RGB"))
+        self.assertEqual(decoded.tolist(), [[WATERSHED_TO_CLASS[value] for value in values]])
 
     def test_combined_loss_backpropagates(self):
         model = TemporalSurgiNet(base_channels=4)
@@ -58,4 +73,3 @@ class SurgiGuardTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

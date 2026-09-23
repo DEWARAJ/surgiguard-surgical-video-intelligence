@@ -72,3 +72,37 @@ class TemporalSurgiNet(nn.Module):
 def parameter_count(model: nn.Module) -> int:
     return sum(parameter.numel() for parameter in model.parameters() if parameter.requires_grad)
 
+
+class SurgicalSegNet(nn.Module):
+    """Matched frame-only/temporal segmentation models for real-data ablations."""
+
+    def __init__(self, base_channels: int = 12, classes: int = 13, temporal: bool = True):
+        super().__init__()
+        b = base_channels
+        self.enc1 = ConvBlock(3, b)
+        self.enc2 = ConvBlock(b, b * 2)
+        self.bottleneck = ConvBlock(b * 2, b * 4)
+        self.pool = nn.MaxPool2d(2)
+        self.temporal = ConvGRUCell(b * 4) if temporal else None
+        self.up2 = nn.ConvTranspose2d(b * 4, b * 2, 2, stride=2)
+        self.dec2 = ConvBlock(b * 4, b * 2)
+        self.up1 = nn.ConvTranspose2d(b * 2, b, 2, stride=2)
+        self.dec1 = ConvBlock(b * 2, b)
+        self.head = nn.Conv2d(b, classes, 1)
+
+    def forward(self, video: torch.Tensor) -> torch.Tensor:
+        if video.ndim != 5:
+            raise ValueError("expected video shape [batch, time, channels, height, width]")
+        hidden = None
+        outputs = []
+        for frame in video.unbind(dim=1):
+            skip1 = self.enc1(frame)
+            skip2 = self.enc2(self.pool(skip1))
+            encoded = self.bottleneck(self.pool(skip2))
+            if self.temporal is not None:
+                hidden = self.temporal(encoded, hidden)
+                encoded = hidden
+            decoded2 = self.dec2(torch.cat([self.up2(encoded), skip2], dim=1))
+            decoded1 = self.dec1(torch.cat([self.up1(decoded2), skip1], dim=1))
+            outputs.append(self.head(decoded1))
+        return torch.stack(outputs, dim=1)

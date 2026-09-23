@@ -1,0 +1,36 @@
+{
+  "evidence_type": "real_cholecseg8k_subset",
+  "input_shape": [
+    1,
+    4,
+    3,
+    160,
+    288
+  ],
+  "exports": [
+    {
+      "model": "frame_only",
+      "onnx_file": "cholecseg8k_frame_only.onnx",
+      "file_bytes": 295683,
+      "maximum_absolute_error": 8.58306884765625e-06,
+      "equivalent_at_1e-4": true,
+      "cpu_onnxruntime_latency_ms": {
+        "median": 69.64855000842363,
+        "p95": 170.38389993831515,
+        "iterations": 50
+      }
+    },
+    {
+      "model": "temporal",
+      "onnx_file": "cholecseg8k_temporal.onnx",
+      "file_bytes": 2465808,
+      "maximum_absolute_error": 3.5762786865234375e-06,
+      "equivalent_at_1e-4": true,
+      "cpu_onnxruntime_latency_ms": {
+        "median": 67.73294997401536,
+        "p95": 114.95310009922832,
+        "iterations": 50
+      }
+    }
+  ]
+}

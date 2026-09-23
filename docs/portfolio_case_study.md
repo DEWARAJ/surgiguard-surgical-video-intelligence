@@ -15,15 +15,15 @@ Frame-by-frame segmentation can flicker and a mask alone does not answer the ope
 - Implemented a multi-term objective: cross entropy, soft Dice, heatmap BCE, and temporal consistency.
 - Added validation-only threshold calibration for the geometric risk monitor.
 - Exported the model to ONNX and checked PyTorch/ONNX numerical equivalence.
-- Added unit tests, CI, a model card, and a C++ ONNX Runtime deployment scaffold.
+- Added unit tests, CI, a model card, real-data failure analysis, and a compiled C++ ONNX Runtime benchmark.
 
 ## Evidence
 
-On 24 held-out synthetic sequences after 10 epochs: 0.944 instrument IoU, 0.955 protected-anatomy IoU, 0.067-pixel tip error, 0.028 temporal jitter, and 0.766 risk F1. These are software-verification results on generated data, not clinical or public-dataset claims.
+On real CholecSeg8k data, I compared matched frame-only and ConvGRU models with source-video-separated splits. The temporal model improved validation mIoU but fell from 0.224 to 0.209 on untouched test videos and increased static-region flicker, so I selected the smaller frame model. The synthetic pipeline remains separately labeled as software-verification evidence.
 
 ## Honest limitation and next experiment
 
-The current benchmark does not prove generalization to real surgical video. The next step is a patient/video-separated evaluation on a licensed public dataset such as SAR-RARP50, EndoVis, or CholecSeg8k, followed by calibration and latency profiling on the target deployment device.
+The real-data run uses a fixed subset and one seed, so it does not establish clinical generalization. The next step is full-dataset multi-seed evaluation, motion-compensated temporal consistency, and end-to-end latency profiling on the target deployment device.
 
 ## Interview questions this project supports
 

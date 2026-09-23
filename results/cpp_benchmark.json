@@ -1,0 +1,22 @@
+{
+  "runtime": "ONNX Runtime 1.30.0 C++ CPU",
+  "threads": 1,
+  "warmup_iterations": 10,
+  "measured_iterations": 100,
+  "input_shape": [1, 4, 3, 160, 288],
+  "models": [
+    {
+      "model": "frame_only",
+      "median_ms": 98.712,
+      "p95_ms": 182.114,
+      "output_elements": 2396160
+    },
+    {
+      "model": "temporal",
+      "median_ms": 191.225,
+      "p95_ms": 332.109,
+      "output_elements": 2396160
+    }
+  ],
+  "scope": "model inference only; image decoding, resize, normalization, and rendering excluded"
+}

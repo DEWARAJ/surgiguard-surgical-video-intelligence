@@ -1,0 +1,19 @@
+{
+  "evidence_type": "synthetic_only",
+  "device": "cpu",
+  "parameter_count": 85044,
+  "validation_sequences": 24,
+  "epoch": 10,
+  "train_loss": 1.4823245108127594,
+  "instrument_iou": 0.9441290595694515,
+  "instrument_dice": 0.9712561177406241,
+  "protected_anatomy_iou": 0.9552240056880801,
+  "protected_anatomy_dice": 0.9770865293708816,
+  "mean_foreground_iou": 0.9496765326287658,
+  "tip_error_px": 0.06681472559769948,
+  "expected_calibration_error": 0.2531233032544454,
+  "temporal_jitter": 0.027577718098958332,
+  "risk_precision": 0.6206896551724138,
+  "risk_recall": 1.0,
+  "risk_f1": 0.7659574468085107
+}

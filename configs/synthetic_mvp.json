@@ -1,0 +1,18 @@
+{
+  "seed": 17,
+  "image_size": 64,
+  "sequence_length": 4,
+  "train_sequences": 96,
+  "validation_sequences": 24,
+  "batch_size": 8,
+  "epochs": 10,
+  "learning_rate": 0.002,
+  "base_channels": 8,
+  "risk_distance_pixels": 7.0,
+  "loss_weights": {
+    "cross_entropy": 1.0,
+    "dice": 0.8,
+    "tip": 1.5,
+    "temporal": 0.1
+  }
+}

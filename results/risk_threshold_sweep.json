@@ -1,0 +1,66 @@
+{
+  "evidence_type": "synthetic_only",
+  "selection_protocol": "threshold selected on the fixed synthetic validation split",
+  "best": {
+    "threshold_pixels": 7,
+    "risk_precision": 0.6206896551724138,
+    "risk_recall": 1.0,
+    "risk_f1": 0.7659574468085107
+  },
+  "sweep": [
+    {
+      "threshold_pixels": 0,
+      "risk_precision": 1.0,
+      "risk_recall": 0.0,
+      "risk_f1": 0.0
+    },
+    {
+      "threshold_pixels": 1,
+      "risk_precision": 1.0,
+      "risk_recall": 0.0,
+      "risk_f1": 0.0
+    },
+    {
+      "threshold_pixels": 2,
+      "risk_precision": 1.0,
+      "risk_recall": 0.0,
+      "risk_f1": 0.0
+    },
+    {
+      "threshold_pixels": 3,
+      "risk_precision": 1.0,
+      "risk_recall": 0.08333333333333333,
+      "risk_f1": 0.15384615384615385
+    },
+    {
+      "threshold_pixels": 4,
+      "risk_precision": 0.6122448979591837,
+      "risk_recall": 0.8333333333333334,
+      "risk_f1": 0.7058823529411765
+    },
+    {
+      "threshold_pixels": 5,
+      "risk_precision": 0.6111111111111112,
+      "risk_recall": 0.9166666666666666,
+      "risk_f1": 0.7333333333333334
+    },
+    {
+      "threshold_pixels": 6,
+      "risk_precision": 0.6181818181818182,
+      "risk_recall": 0.9444444444444444,
+      "risk_f1": 0.7472527472527473
+    },
+    {
+      "threshold_pixels": 7,
+      "risk_precision": 0.6206896551724138,
+      "risk_recall": 1.0,
+      "risk_f1": 0.7659574468085107
+    },
+    {
+      "threshold_pixels": 8,
+      "risk_precision": 0.6,
+      "risk_recall": 1.0,
+      "risk_f1": 0.7499999999999999
+    }
+  ]
+}
